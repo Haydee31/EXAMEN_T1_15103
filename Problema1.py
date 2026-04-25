@@ -42,3 +42,31 @@ def JugarPartido():
     else:
         RegistraSet(2)
         print(f"-> Ganó el set: {equipo2.nombre}")
+def ResultadoTorneo():
+    print("=" * 30)
+    print("    RESULTADOS DEL TORNEO")
+    print("=" * 30)
+    print(f"{equipo1.nombre}:")
+    print(f"  - Partidos Ganados : {equipo1.partidosGanados}")
+    print(f"  - Partidos Perdidos: {equipo1.partidosPerdidos}")
+    print(f"{equipo2.nombre}:")
+    print(f"  - Partidos Ganados : {equipo2.partidosGanados}")
+    print(f"  - Partidos Perdidos: {equipo2.partidosPerdidos}")
+    print("=" * 30)
+ 
+print("           JUEGO DE VOLEIBOL")
+print("=" * 40)
+while True:
+    try:
+        num_partidos = int(input("-> Cuántos partidos van a jugar: "))
+        if num_partidos > 0:
+            break
+        else:
+            print(" Ingrese un número mayor a cero")
+    except ValueError:
+        print(" Ingrese un número válido.") 
+print(f"Juego de {num_partidos} partidos: {equipo1.nombre} vs {equipo2.nombre}")
+for i in range(1, num_partidos + 1):
+    print(f"{'=' * 20} PARTIDO #{i} {'=' * 20}")
+    JugarPartido() 
+ResultadoTorneo()
