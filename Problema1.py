@@ -23,3 +23,7 @@ def RegistraSet(equipo_ganador):
             equipo1.partidosPerdidos += 1
             equipo1.setGanados = 0
             equipo2.setGanados = 0 
+def Puntos():
+    return random.randint(10, 28)
+def PuntosExtras():
+    return random.randint(0, 6)
