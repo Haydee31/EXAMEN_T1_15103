@@ -27,3 +27,18 @@ def Puntos():
     return random.randint(10, 28)
 def PuntosExtras():
     return random.randint(0, 6)
+def JugarPartido():
+    puntos1 = Puntos()
+    puntos2 = Puntos()
+    print(f"{equipo1.nombre}: {puntos1} pts")
+    print(f"{equipo2.nombre}: {puntos2} pts")
+    while not (puntos1 >= 25 or puntos2 >= 25):
+        puntos1 += PuntosExtras()
+        puntos2 += PuntosExtras()
+        print(f"==> Puntos extras - {equipo1.nombre}: {puntos1} pts | {equipo2.nombre}: {puntos2} pts")
+    if puntos1 > puntos2:
+        RegistraSet(1)
+        print(f"=> Ganó el set: {equipo1.nombre}")
+    else:
+        RegistraSet(2)
+        print(f"-> Ganó el set: {equipo2.nombre}")
